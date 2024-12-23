@@ -16,9 +16,11 @@ Pending ...
 
 ## Team Members
 
-- **Liyat Tesfaye** - UGR/6140/12
 - **Yosef Aweke** - UGR/5887/13
-- 
+- **Liyat Tesfaye** - UGR/6140/12
+-
+-
+-
 
 ## How to Run
 
