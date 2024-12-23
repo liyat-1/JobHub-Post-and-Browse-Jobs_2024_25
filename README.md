@@ -22,9 +22,4 @@ Pending ...
 -
 -
 
-## How to Run
 
-1. Clone the repository: git clone https://github.com/your-repo/job-posting-website.git
-2. Set up the database and configure environment variables.
-3. Run the backend server: npm run start
-4. Open the frontend in a browser.
