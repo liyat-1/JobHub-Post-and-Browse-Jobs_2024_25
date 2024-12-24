@@ -16,10 +16,13 @@ Pending ...
 
 ## Team Members
 
-- **Yosef Aweke** - UGR/5887/13
-- **Liyat Tesfaye** - UGR/6140/12
-- **Feven Dereje** - UGR/9461/12
--
--
+| Name            | ID          |
+|-----------------|-------------|
+| Yosef Aweke     | UGR/5887/13 |
+| Liyat Tesfaye   | UGR/6140/12 |
+| Feven Dereje    | UGR/9461/12 |
+| [Add Name]      | [Add ID]    |
+| [Add Name]      | [Add ID]    |
+
 
 
