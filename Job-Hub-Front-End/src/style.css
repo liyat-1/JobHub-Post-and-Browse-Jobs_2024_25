@@ -1,0 +1,264 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: white;
+  color: #4a148c;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #4a148c;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: #4a148c;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link:hover {
+  color: #d1c4e9 !important;
+}
+
+.search input {
+  border: 1px solid #4a148c;
+}
+
+.search button {
+  background-color: #4a148c;
+  color: white;
+}
+
+.search button:hover {
+  background-color: #6a1b9a;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: none;
+  background-color: #4a148c;
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card img {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  color: white;
+  font-weight: bold;
+}
+
+.card-text {
+  color: white;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content {
+  background-color: #f3e5f5;
+}
+
+.modal-header {
+  background-color: #4a148c;
+  color: white;
+}
+
+.modal-body {
+  background-color: white;
+}
+
+.form-outline label {
+  color: #4a148c;
+}
+
+.form-control {
+  border: 1px solid #4a148c;
+  border-radius: 4px;
+}
+
+.form-control:focus {
+  border-color: #6a1b9a;
+}
+
+.btn-success {
+  background-color: #4a148c;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #6a1b9a;
+}
+
+footer {
+  background-color: #4a148c;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: #d1c4e9;
+}
+
+.trailer-container {
+  background-color: #f3e5f5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.job-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-content p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.job-content p strong {
+  color: #4a148c;
+  font-weight: bold;
+}
+
+.job-content .job-description {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.job-content .job-requirements {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: normal;
+}
+
+.job-content .job-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a148c;
+}
+
+.job-content img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.no-cover .job-img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.btn-success {
+  background-color: #7b1fa2;
+  border-color: #7b1fa2;
+}
+
+.btn-success:hover {
+  background-color: #9c27b0;
+  border-color: #9c27b0;
+}
+
+.btn-danger {
+  background-color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.btn-danger:hover {
+  background-color: #e57373;
+  border-color: #e57373;
+}
+
+.btn-outline-warning {
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffeb3b;
+  color: #4a148c;
+}
+
+.modal-content {
+  background-color: white;
+  color: #4a148c;
+}
+
+.modal-header {
+  background-color: #4a148c;
+  color: white;
+}
+
+.modal-footer {
+  background-color: #f3e5f5;
+}
+
+.modal-body {
+  background-color: #fafafa;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #d1c4e9;
+}
+
+.form-control:focus {
+  border-color: #4a148c;
+}
+
+#jobContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    font-size: 0.9rem;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
