@@ -83,18 +83,18 @@ header h1 {
 .btn-close {
   color: #e63946;
 }
-/* Custom close button styling */
+
 .custom-close-btn {
   background-color: transparent;
   border: none;
   font-size: 1.5rem;
-  color: #ff6b6b; /* Soft red color */
+  color: #ff6b6b;
   transition: color 0.3s ease;
   outline: none;
 }
 
 .custom-close-btn:hover {
-  color: #e63946; /* Darker red on hover */
+  color: #e63946;
 }
 
 .custom-close-btn:focus {

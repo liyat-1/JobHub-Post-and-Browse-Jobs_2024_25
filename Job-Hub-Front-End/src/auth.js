@@ -2,17 +2,19 @@ import Request from "./defaultFetch.mjs";
 
 const request = new Request();
 
+// Attach event listener to register form if it exists
 if (document.querySelector("#registerForm")) {
   document.querySelector("#registerForm").addEventListener("submit", register);
 }
-
+// Attach event listener to login form if it exists
 if (document.querySelector("#loginForm")) {
   document.querySelector("#loginForm").addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission
     login();
   });
 }
 
+// Function to handle registration form submission
 async function register(e) {
   e.preventDefault();
 
@@ -49,16 +51,17 @@ async function register(e) {
   });
   if (!response.ok) {
     const data = await response.json();
-    alert(data.message);
+    alert(data.message); // Show the error message from the backend
   } else {
     const data = await response.json();
-    console.log(data);
+    console.log(data); // Log success data
+    // After successful registration, log in the user
   }
-
   //LOG IN REGISTERED USER
   login(username, password);
 }
 
+// Function to handle login form submission
 async function login(name = null, pass = null) {
   const username = name ?? document.loginForm.username.value.trim();
   const password = pass ?? document.loginForm.password.value.trim();
@@ -71,12 +74,13 @@ async function login(name = null, pass = null) {
     const data = await response.json();
     alert(data.message + ": Invalid username/password");
     console.log(data);
-    location.reload();
+    location.reload(); // Reload page if login fails
   } else {
     const { access_token } = await response.json();
     sessionStorage.setItem("jwt", access_token);
     sessionStorage.setItem("currentUser", username);
     console.log("object");
+    // Redirect to the home page or the previous page
     location.href = document.referrer == "" ? "home.html" : document.referrer;
   }
 }

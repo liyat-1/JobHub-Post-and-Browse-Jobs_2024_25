@@ -14,17 +14,20 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: '127.0.0.1',
-      port: 3306,
-      username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-      database: 'jobhub',
-      entities: [User, Job],
-      synchronize: true,
+      type: 'mysql', // Specifies the database type, in this case, MySQL.
+      host: '127.0.0.1', // The hostname or IP address of the database server, here it's the local machine.
+      port: 3306, // The port number on which the database server is listening, 3306 is the default for MySQL.
+      username: process.env.DATABASE_USER, // The username to connect to the database, fetched from environment variables for security.
+      password: process.env.DATABASE_PASSWORD, // The password to connect to the database, also fetched from environment variables.
+      database: 'jobhub', // The name of the database to connect to.
+      entities: [User, Job], // The list of entities (models) that TypeORM should manage and synchronize with the database.
+      synchronize: true, // Automatically synchronizes the database schema with the entities, creating or altering tables as needed. This should be used cautiously in production.
     }),
+    // Importing user-related features and services.
     UsersModule,
+    // Importing authentication-related features and services.
     AuthModule,
+    // Importing job-related features and services.
     JobsModule,
   ],
   controllers: [AppController],

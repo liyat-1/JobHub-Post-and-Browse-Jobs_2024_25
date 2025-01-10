@@ -19,14 +19,16 @@ export class JobsService {
     @InjectRepository(Job) private jobsRepository: Repository<Job>,
     private readonly userService: UsersService,
   ) {}
-
+  // Retrieves all job records from the database.
   findAll(): Promise<Job[]> {
     return this.jobsRepository.find();
   }
+  // Finds a job by its title.
   findOne(title: string): Promise<Job> {
     return this.jobsRepository.findOneBy({ title });
   }
 
+  // Creates a new job record with the provided details and assigns it to the user.
   async createJob(createJobDto: CreateJobDto, user: User, image: string) {
     const newJob = this.jobsRepository.create(createJobDto);
 
@@ -35,6 +37,7 @@ export class JobsService {
     return this.jobsRepository.save(newJob);
   }
 
+  // Removes a job by its ID, ensuring the user performing the action is the creator of the job.
   async remove(id: number, user: { userId: number; username: string }) {
     const job = await this.findById(id);
     if (job.createdBy.id !== user.userId) {
@@ -47,6 +50,7 @@ export class JobsService {
     return {};
   }
 
+  // Updates an existing job record by its ID with new details and cover image, ensuring the user is the creator.
   async updateJob(id: number, updateJobDto: UpdateJobDto, user, image: string) {
     const job = await this.findById(id);
     if (job.createdBy.id !== user.userId) {
@@ -64,6 +68,7 @@ export class JobsService {
     return {};
   }
 
+  // Finds a job by its ID and includes the creator's information. Throws an exception if not found.
   async findById(id: number): Promise<Job> {
     const job = await this.jobsRepository.findOne({
       where: { id },

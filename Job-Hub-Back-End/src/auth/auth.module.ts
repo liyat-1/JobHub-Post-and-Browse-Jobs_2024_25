@@ -10,11 +10,11 @@ import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
-    UsersModule,
-    PassportModule,
+    UsersModule, // Importing the `UsersModule` to utilize user-related services.
+    PassportModule, // Integrating the Passport.js module for authentication strategies.
     JwtModule.register({
-      secret: jwtConstants.secret,
-      signOptions: { expiresIn: '3600s' },
+      secret: jwtConstants.secret, // Registering the `JwtModule` with the secret key for signing JWTs.
+      signOptions: { expiresIn: '3600s' }, // Setting the token expiration to 3600 seconds (1 hour).
     }),
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy],

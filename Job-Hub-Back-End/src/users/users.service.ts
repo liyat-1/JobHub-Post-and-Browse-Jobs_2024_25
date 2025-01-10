@@ -17,10 +17,12 @@ export class UsersService {
     @InjectRepository(User) private usersRepository: Repository<User>,
   ) {}
 
+  // Retrieves all users from the database along with their related 'created' entities.
   findAll(): Promise<User[]> {
     return this.usersRepository.find({ relations: ['created'] });
   }
 
+  // Creates a new user after checking that the username doesn't already exist and hashes the password before saving.
   async createUser(createUserDto: CreateUserDto) {
     const existingUser = await this.findOne(createUserDto.username, false);
     if (existingUser) {
@@ -35,6 +37,7 @@ export class UsersService {
     return this.usersRepository.save(newUser);
   }
 
+  // Retrieves a user by their username, optionally skipping the existence check.
   async findOne(username: string, withCheck = true): Promise<User> {
     const user = await this.usersRepository.findOne({
       where: { username: username },
@@ -46,6 +49,7 @@ export class UsersService {
     return user;
   }
 
+  // Deletes a user by their ID, ensuring the action is authorized (the user can only delete themselves).
   async remove(id: number, user) {
     if (id != user.userId) {
       throw new ForbiddenException('Action Forbidden.', {

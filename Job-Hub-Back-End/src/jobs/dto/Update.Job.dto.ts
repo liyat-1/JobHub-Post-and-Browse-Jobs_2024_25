@@ -17,7 +17,7 @@ export class UpdateJobDto {
 
   @IsNotEmpty()
   @IsOptional()
-  requirement: string; // Array of strings
+  requirement: string;
 
   @IsOptional()
   @IsNotEmpty()

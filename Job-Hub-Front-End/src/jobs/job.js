@@ -27,7 +27,6 @@ if (!res.ok) {
     link,
     createdBy,
   } = job;
-
   if (
     createdBy.username.toLowerCase() !=
     sessionStorage.getItem("currentUser").toLowerCase()
@@ -49,11 +48,10 @@ if (!res.ok) {
             <p><strong>Company:</strong> ${company}</p>
             <p class="job-description"><strong>Description:</strong> ${description}</p>
             <p class="job-requirements"><strong>Requirements:</strong> ${requirement}</p>
-          <p class="link-style">
-  <strong>Application Link/Form:</strong>
-  <a href="${link}" target="_blank" class="custom-link">${link}</a>
-</p>
-
+            <p class="link-style">
+            <strong>Application Link/Form:</strong>
+            <a href="${link}" target="_blank" class="custom-link">${link}</a>
+            </p>
           </div>
         </div>
       </div>
@@ -66,11 +64,9 @@ if (!res.ok) {
         <p class="job-description"><strong>Description:</strong> ${description}</p>
         <p class="job-requirements"><strong>Requirements:</strong> ${requirement}</p>
         <p class="link-style">
-  <strong>Application Link/Form:</strong>
-  <a href="${link}" target="_blank" class="custom-link">${link}</a>
-</p>
-
-     
+        <strong>Application Link/Form:</strong>
+        <a href="${link}" target="_blank" class="custom-link">${link}</a>
+        </p>
       </div>
     `;
   }
