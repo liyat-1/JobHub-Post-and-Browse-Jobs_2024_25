@@ -43,20 +43,17 @@ export const storage = {
 export class JobsController {
   constructor(private readonly jobsService: JobsService) {}
   @Get()
-  // Retrieves all job records from the database.
   getAllJobs() {
     return this.jobsService.findAll();
   }
 
   @Get(':id')
-  // Retrieves a specific job record by its ID.
   @UseInterceptors(ClassSerializerInterceptor)
   getJob(@Param('id', ParseIntPipe) id) {
     return this.jobsService.findById(id);
   }
 
   @Get('cover/:imageName')
-  // Serves the cover image file for a job by its image name.
   getJobCover(@Param('imageName') imageName: string, @Res() res) {
     return res.sendFile(path.join(process.cwd(), 'covers/' + imageName));
   }
@@ -65,7 +62,6 @@ export class JobsController {
   @Post()
   @UsePipes(ValidationPipe)
   @UseInterceptors(FileInterceptor('coverPage', storage))
-  // Creates a new job record with the provided details and cover image file.
   createJob(
     @Body() createJobDto: CreateJobDto,
     @Request() req,
@@ -78,7 +74,6 @@ export class JobsController {
 
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
-  // Deletes a job record by its ID, ensuring the user is authenticated.
   removeJob(@Param('id', ParseIntPipe) id: number, @Request() req) {
     return this.jobsService.remove(id, req.user);
   }
@@ -87,13 +82,25 @@ export class JobsController {
   @Patch(':id')
   @UsePipes(ValidationPipe)
   @UseInterceptors(FileInterceptor('coverPage', storage))
-  // Updates an existing job record by its ID with the provided details and cover image file.
-  updateJob(
+  async updateJob(
     @Param('id', ParseIntPipe) id: number,
     @Body() updateJobDto: UpdateJobDto,
     @Request() req,
     @UploadedFile() file: Express.Multer.File,
   ) {
-    return this.jobsService.updateJob(id, updateJobDto, req.user, file.path);
+    // Check if a new file is uploaded
+    let filePath = null;
+
+    if (file) {
+      // If a file is uploaded, set the filePath to the uploaded file's path
+      filePath = file.path;
+    } else {
+      // If no file is uploaded, retain the existing coverPage from the database
+      const existingJob = await this.jobsService.findById(id);
+      filePath = existingJob.coverPage; // Preserve the existing coverPage
+    }
+
+    // Proceed with the update, using the correct filePath
+    return this.jobsService.updateJob(id, updateJobDto, req.user, filePath);
   }
 }

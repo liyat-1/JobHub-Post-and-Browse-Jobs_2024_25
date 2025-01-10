@@ -23,6 +23,7 @@ export class UpdateJobDto {
   @IsNotEmpty()
   coverPage: string;
 
+  @IsOptional()
   @IsNotEmpty()
   link: string;
 }

@@ -95,7 +95,7 @@ async function updateJob(e) {
   const desc = document.querySelector("#desc").value.trim();
   const requirement = document.querySelector("#requirement").value.trim();
   const cover = document.querySelector("#cover");
-  const link = document.querySelector("#link");
+  const link = document.querySelector("#link").value.trim();
 
   if (desc && desc.length < 11) {
     alert("Description must be more than 10 characters");
