@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css?family=Ubuntu"
       rel="stylesheet"
     />
     <script defer src="script.js"></script>
-    <title>JobHub - Welcome</title>
+    <script type="module" src="./jobs/jobs.js"></script>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,36 +22,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .bg-purple {
-        background-color: #6a1b9a;
-      }
-      .text-purple {
-        color: #6a1b9a;
-      }
-      .hero-section {
-        background: linear-gradient(to right, #6a1b9a, #9c27b0);
-        color: white;
-        padding: 60px 0;
-        text-align: center;
-      }
-      .hero-section h1 {
-        font-size: 4rem;
-        margin-bottom: 20px;
-      }
-      .hero-section p {
-        font-size: 1.5rem;
-      }
-      .navbar .nav-link {
-        color: white !important;
-      }
-      .navbar .nav-link:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <title>JobHub - Welcome</title>
   </head>
 
   <body class="d-flex flex-column min-vh-100 bg-light">
+    <!-- Navbar -->
     <header>
       <nav class="navbar navbar-expand-lg bg-purple">
         <div class="container-fluid">
@@ -85,25 +65,57 @@
       </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-section">
       <div class="container">
-        <h1>Welcome to JobHub</h1>
-        <p>Your one-stop solution for job postings and career opportunities.</p>
-        <p id="user-welcome-message" class="mt-3"></p>
+        <h1>Find Your Dream Job with JobHub</h1>
+        <p>
+          The ultimate platform to connect job seekers and employers worldwide.
+        </p>
+        <div class="cta-buttons">
+          <a href="job.html" class="btn btn-explore">Explore Jobs</a>
+          <a href="jobs.html" class="btn btn-post">Post a Job</a>
+        </div>
       </div>
     </section>
 
-    <main class="container text-center mt-5">
-      <h2 class="text-purple fw-bold">Explore Job Opportunities</h2>
-      <p class="mt-3 fs-5 text-muted">
-        JobHub is designed to connect job seekers and employers seamlessly. Stay
-        updated with the latest opportunities and advance your career.
-      </p>
-      <p class="fs-5 text-muted">
-        Whether you're looking for a job or posting one, JobHub makes it easy to
-        succeed.
-      </p>
-    </main>
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="text-purple">Why Choose JobHub?</h2>
+        <div class="row mt-4">
+          <div class="col-md-4 feature-item">
+            <img
+              src="../images/pngtree-2-5d-data-protection-business-image_11125.jpg"
+              alt="Feature Icon"
+            />
+            <h4>Seamless Job Search</h4>
+            <p>
+              Filter jobs by category, location, and salary to find the perfect
+              fit.
+            </p>
+          </div>
+          <div class="col-md-4 feature-item">
+            <img
+              src="../images/pngtree-2-5d-data-protection-business-image_11125.jpg"
+              alt="Feature Icon"
+            />
+            <h4>Secure Hiring</h4>
+            <p>Connect with verified employers for a secure hiring process.</p>
+          </div>
+          <div class="col-md-4 feature-item">
+            <img
+              src="../images/pngtree-2-5d-data-protection-business-image_11125.jpg"
+              alt="Feature Icon"
+            />
+            <h4>24/7 Support</h4>
+            <p>We're here to assist you at every step of your job journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <h1>Find Your Dream Job with JobHub</h1>
+    <section id="jobList" class="d-grid"></section>
 
     <div class="container px-0 mt-auto">
       <footer class="row m-0 align-items-center">

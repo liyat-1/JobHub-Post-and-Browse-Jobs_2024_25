@@ -18,4 +18,7 @@ export class CreateJobDto {
 
   @IsOptional()
   coverpage: string;
+
+  @IsNotEmpty()
+  link: string;
 }

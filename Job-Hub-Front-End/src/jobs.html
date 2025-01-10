@@ -112,19 +112,17 @@
                 <h5 class="modal-title" id="exampleModalLongTitle">Post Job</h5>
                 <button
                   type="button"
-                  class="close"
+                  class="btn-close custom-close-btn"
                   data-bs-dismiss="modal"
                   aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                ></button>
               </div>
               <div class="modal-body">
                 <form name="createJobForm" id="createJob">
                   <div class="form-outline mb-4">
                     <label class="form-label" for="company">Company Name</label>
                     <input
-                      class="form-control"
+                      class="form-control form-control-lg"
                       type="text"
                       required
                       id="company"
@@ -133,7 +131,7 @@
                   <div class="form-outline mb-4">
                     <label class="form-label" for="title">Title</label>
                     <input
-                      class="form-control"
+                      class="form-control form-control-lg"
                       type="text"
                       required
                       id="title"
@@ -146,7 +144,7 @@
                       id="desc"
                       rows="4"
                       required
-                      class="form-control"
+                      class="form-control form-control-lg"
                     ></textarea>
                   </div>
                   <div class="form-outline mb-4">
@@ -157,24 +155,35 @@
                       id="requirement"
                       rows="4"
                       required
-                      class="form-control"
+                      class="form-control form-control-lg"
                     ></textarea>
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="cover">Cover page</label>
                     <input
-                      class="form-control"
+                      class="form-control form-control-lg"
                       type="file"
                       required
                       id="cover"
                     />
                   </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="link"
+                      >Link / Application Form</label
+                    >
+                    <textarea
+                      id="link"
+                      rows="4"
+                      required
+                      class="form-control link-style"
+                    ></textarea>
+                  </div>
 
                   <input
                     type="submit"
                     value="Create Job"
-                    class="btn btn-primary btn-block"
+                    class="btn btn-primary btn-block btn-lg"
                   />
                 </form>
               </div>

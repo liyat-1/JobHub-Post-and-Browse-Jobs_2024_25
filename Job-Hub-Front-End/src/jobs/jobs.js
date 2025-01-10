@@ -4,7 +4,7 @@ const request = new Request();
 
 class jobTemplate {
   job;
-  constructor(id, company, title, desc, requirement, coverPage) {
+  constructor(id, company, title, desc, requirement, coverPage, link) {
     this.job = `  
         <div class="card mb-4 shadow-sm">
           <a href="job.html" onclick="sessionStorage.setItem('currentJob', ${id})" class="text-decoration-none text-dark">
@@ -55,7 +55,8 @@ if (!response.ok) {
       job.title,
       job.description,
       job.requirement,
-      job.coverPage
+      job.coverPage,
+      job.link
     );
     jobList.innerHTML += jobItem.job;
   });
@@ -68,6 +69,7 @@ async function createJob(e) {
   const desc = document.querySelector("#desc").value.trim();
   const requirement = document.querySelector("#requirement").value.trim();
   const cover = document.querySelector("#cover");
+  const link = document.querySelector("#link").value.trim();
 
   //CREATE MOVIE WITH CREATE MOVIE REQUEST TO API
   const formData = new FormData();
@@ -76,6 +78,7 @@ async function createJob(e) {
   formData.append("title", title);
   formData.append("description", desc);
   formData.append("requirement", requirement);
+  formData.append("link", link);
 
   const response = await fetch("http://localhost:3000/jobs", {
     method: "POST",

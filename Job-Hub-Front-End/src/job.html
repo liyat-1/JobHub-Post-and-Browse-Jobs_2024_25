@@ -90,12 +90,10 @@
                 <h5 class="modal-title" id="editJobTitle">Edit Job</h5>
                 <button
                   type="button"
-                  class="close"
+                  class="btn-close custom-close-btn"
                   data-bs-dismiss="modal"
                   aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                ></button>
               </div>
               <div class="modal-body">
                 <form name="editJobForm" id="updateJobForm">
@@ -134,6 +132,17 @@
                     <label class="form-label" for="cover">New Cover Page</label>
                     <input class="form-control" type="file" id="cover" />
                   </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="link"
+                      >New Link/Application Form</label
+                    >
+                    <textarea
+                      id="link"
+                      rows="4"
+                      required
+                      class="form-control link-style"
+                    ></textarea>
+                  </div>
                   <button class="btn btn-success btn-block">Update Post</button>
                 </form>
               </div>
@@ -155,7 +164,7 @@
         <a class="col-md-2 text-center" href="about.html">About</a>
         <a class="col-md-2 text-center" href="contact.html">Contact</a>
         <p class="col-md-6 text-muted mb-0">
-          Copyright © JobHub 2022, All rights reserved.
+          Copyright © JobHub 2025, All rights reserved.
         </p>
       </footer>
     </div>

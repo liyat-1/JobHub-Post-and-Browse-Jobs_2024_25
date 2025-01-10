@@ -70,39 +70,35 @@ header h1 {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.modal-content {
-  background-color: #f3e5f5;
+/* Link style for the link textarea */
+.link-style {
+  border: 1px solid #0d6efd;
+  background-color: #f8f9fa;
+  color: #0d6efd;
+  padding: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-.modal-header {
-  background-color: #4a148c;
-  color: white;
+.btn-close {
+  color: #e63946;
 }
-
-.modal-body {
-  background-color: white;
-}
-
-.form-outline label {
-  color: #4a148c;
-}
-
-.form-control {
-  border: 1px solid #4a148c;
-  border-radius: 4px;
-}
-
-.form-control:focus {
-  border-color: #6a1b9a;
-}
-
-.btn-success {
-  background-color: #4a148c;
+/* Custom close button styling */
+.custom-close-btn {
+  background-color: transparent;
   border: none;
+  font-size: 1.5rem;
+  color: #ff6b6b; /* Soft red color */
+  transition: color 0.3s ease;
+  outline: none;
 }
 
-.btn-success:hover {
-  background-color: #6a1b9a;
+.custom-close-btn:hover {
+  color: #e63946; /* Darker red on hover */
+}
+
+.custom-close-btn:focus {
+  box-shadow: none;
 }
 
 footer {
@@ -172,36 +168,6 @@ footer a:hover {
   display: none;
 }
 
-.btn-success {
-  background-color: #7b1fa2;
-  border-color: #7b1fa2;
-}
-
-.btn-success:hover {
-  background-color: #9c27b0;
-  border-color: #9c27b0;
-}
-
-.btn-danger {
-  background-color: #d32f2f;
-  border-color: #d32f2f;
-}
-
-.btn-danger:hover {
-  background-color: #e57373;
-  border-color: #e57373;
-}
-
-.btn-outline-warning {
-  border-color: #ff9800;
-  color: #ff9800;
-}
-
-.btn-outline-warning:hover {
-  background-color: #ffeb3b;
-  color: #4a148c;
-}
-
 .modal-content {
   background-color: white;
   color: #4a148c;
@@ -242,7 +208,93 @@ footer a:hover {
   gap: 20px;
   padding: 20px;
 }
+.bg-purple {
+  background-color: #6a1b9a;
+}
 
+.hero-section {
+  background: linear-gradient(
+      to right,
+      rgba(106, 27, 154, 0.2),
+      rgba(156, 39, 176, 0.1)
+    ),
+    url("../images/3d-purple-illustration-icon-of-working-on-a-business-job-with-hand-gesture-for-ui-ux-social-media-ads-design-free-png.webp")
+      no-repeat center center/cover;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.hero-section .cta-buttons a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 10px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+
+.btn-explore {
+  background-color: white;
+  color: #6a1b9a;
+  border: 2px solid white;
+  transition: all 0.3s;
+}
+
+.btn-explore:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.btn-post {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-post:hover {
+  background-color: white;
+  color: #ff4081;
+}
+
+.features-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  padding: 20px;
+}
+
+.feature-item img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.feature-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 @media (max-width: 768px) {
   .navbar {
     font-size: 0.9rem;

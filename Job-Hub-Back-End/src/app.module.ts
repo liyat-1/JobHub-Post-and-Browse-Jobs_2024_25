@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-
 import { JobsModule } from './jobs/jobs.module';
 import { Job } from './jobs/job.entity';
 import { User } from './users/user.entity';

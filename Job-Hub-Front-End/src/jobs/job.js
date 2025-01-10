@@ -18,8 +18,15 @@ if (!res.ok) {
   console.error(await res.json());
 } else {
   const job = await res.json();
-  const { company, title, description, requirement, coverPage, createdBy } =
-    job;
+  const {
+    company,
+    title,
+    description,
+    requirement,
+    coverPage,
+    link,
+    createdBy,
+  } = job;
 
   if (
     createdBy.username.toLowerCase() !=
@@ -42,6 +49,11 @@ if (!res.ok) {
             <p><strong>Company:</strong> ${company}</p>
             <p class="job-description"><strong>Description:</strong> ${description}</p>
             <p class="job-requirements"><strong>Requirements:</strong> ${requirement}</p>
+          <p class="link-style">
+  <strong>Application Link/Form:</strong>
+  <a href="${link}" target="_blank" class="custom-link">${link}</a>
+</p>
+
           </div>
         </div>
       </div>
@@ -53,6 +65,12 @@ if (!res.ok) {
         <p><strong>Company:</strong> ${company}</p>
         <p class="job-description"><strong>Description:</strong> ${description}</p>
         <p class="job-requirements"><strong>Requirements:</strong> ${requirement}</p>
+        <p class="link-style">
+  <strong>Application Link/Form:</strong>
+  <a href="${link}" target="_blank" class="custom-link">${link}</a>
+</p>
+
+     
       </div>
     `;
   }
@@ -81,6 +99,7 @@ async function updateJob(e) {
   const desc = document.querySelector("#desc").value.trim();
   const requirement = document.querySelector("#requirement").value.trim();
   const cover = document.querySelector("#cover");
+  const link = document.querySelector("#link");
 
   if (desc && desc.length < 11) {
     alert("Description must be more than 10 characters");
@@ -111,6 +130,9 @@ async function updateJob(e) {
   }
   if (cover.value) {
     formData.append("coverPage", cover.files[0]);
+  }
+  if (link) {
+    formData.append("link", link);
   }
 
   const response = await fetch(

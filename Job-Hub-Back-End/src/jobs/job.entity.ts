@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsUrl } from 'class-validator';
 import { User } from '../users/user.entity';
 import {
   Entity,
@@ -29,7 +29,11 @@ export class Job {
   requirement: string;
 
   @Column({ default: '' })
-  coverPage: string; //online image, the application will still work offline just won't display cover image
+  coverPage: string;
+
+  @Column({ nullable: true })
+  @IsUrl()
+  link: string;
 
   @ManyToOne(() => User, (user) => user.created, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'userId', referencedColumnName: 'id' })
